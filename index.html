@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employee Automation</title>
+    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+     <div class="head">
+        <div class="logo" style="font-size: 35px;">
+            <i class="fas fa-users-gear"></i>
+        </div>
+        <div class="menu">
+            <i class="fas fa-bars" onclick="openMenu()"></i>
+        </div>
+    </div>
+    <div class="menuer bg">
+        <div class="aller">
+            <div class="top">
+                <div class="title txt">menu</div>
+                <div class="other"><i onclick="closeMenu()" class="fas fa-xmark"></i></div>
+            </div>
+            <div class="mid">This menu guides you from this page and navigate to other pages or perform other tasks. Hope you enjoyed our system!</div>
+            <div class="bottom">
+                <div class="list">
+                    <div class="block setting"><i class="fas fa-city"></i> Mifotra <!-- <div class="sec"></div> --></div>
+                    <div class="block setting"><i class="fas fa-city"></i> LinkedIn <!-- <div class="sec"></div> --></div>
+                    <div class="block"><i class="fas fa-user"></i> Sign In<!-- <div class="sec"></div> --></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="view">
+        <div class="template bg" id="template">
+            <div class="input place" id="checkauto">
+                <form action="">
+                    <div class="formers" id="form">
+                        <div class="ones">
+                            <label for="" class="txt"><i class="fas fa-user"></i>  employee name</label>
+                            <input class="inp" type="text" maxlength="24"  placeholder="enter employee name..." id="input1" required>
+                        </div>
+                        <div class="ones">
+                            <label for="" class="txt"><i class="fas fa-users-viewfinder"></i>  employee position</label>
+                            <input class="inp" type="text"  maxlength="30" placeholder="enter employee position..." id="input2" required>
+                        </div>
+                        <div class="ones">
+                            <label for="" class="txt"><i class="fas fa-user-tag"></i>  employee gender</label>
+                            <input type="text" name="gender" id="input3" class="inp" placeholder="employee gender" required>
+                        </div>
+                        <div class="ones">
+                            <label for="" class="txt"><i class="fas fa-book"></i> employee  degree</label>
+                            <input class="inp" type="text"  maxlength="30" placeholder="enter employee degree..." id="input4" required>
+                        </div>
+                        <div class="ones">
+                            <label for="" class="txt"><i class="fas fa-person"></i>  employee insurance</label>
+                            <input class="inp" type="text" maxlength="30"  placeholder="enter employee insurance..." id="input5" required>
+                        </div>
+                        <div class="ones">
+                            <label for="" class="txt"><i class="fas fa-money-check"></i>  employee salary </label>
+                            <input class="inp" type="text" minlength="1"  placeholder="enter employee salary..." id="input6" required>
+                        </div>
+                        
+                        <div class="ones">
+                            <label for="" class="txt"><i class="fas fa-envelope"></i>  employee email</label>
+                            <input class="inp" type="email"  maxlength="50" placeholder="enter employee email..." id="input7" required>
+                        </div>
+                        <div class="ones">
+                            <label for="" class="txt"><i class="fas fa-phone"></i>  employee phone number</label>
+                            <input class="inp" type="number" placeholder="enter employee phone number..." id="input8" required>
+                        </div>
+                    </div>
+                </form>
+                <div class="follow" id="follow">
+                    <input type="submit" value="next" id="page1" class="page bt-n" onclick="cont()">
+                    <input type="submit" value="Save" id="page2" class="page bt-n" onclick="checkName()">
+                </div>
+    <i class="fas fa-gears"  onclick="leftside()" id="bleft"></i>               
+    <i class="fas fa-camera" onclick="shownone()" id="photoo"></i>               
+            </div>          
+        </div>
+
+        <div class="diver">
+            <div class="top bg">
+                <h2 class="txt">employee automation</h2>
+                <h5 class="txt">list manager</h5>
+            </div>
+            <div class="bottom bg">
+                <div class="all">
+                    <div class="ads">
+                        <input type="text" placeholder="search for employee...." class="inputing" onkeyup="search()">
+                    </div>
+
+                    <br>
+                    
+                    <div class="newDiv" id="newDiv">
+                        <div class="myDiv">
+                           
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+   <div class="another">
+    <div class="bottom">
+        <div class="list" id="li">
+                    <button class="loans"  id="blockPageButton"><i class="fas fa-gear" id="i"></i>Settings</button>
+                    <button class="loans" onclick="themes()"><i class="fas fa-moon" id="i"></i>Theme</button>
+                    <br>
+                    <button class="loans" id="about"><i class="fas fa-house-chimney" id="i"></i>About</button>
+                    <button class="loans"><i class="fas fa-message" id="i"></i> messages</button>
+        </div>
+        <div class="communities" id="communities">
+            <i class="fas fa-users-gear" id="gear"></i><h4 id="devert" class="devert">Communities for your favorite technologies.</h4> 
+        </div>
+   </div>
+   <!---employee image-->
+    
+   <div id="blockMessage" class="hidden">
+    <div class="employee-highlight0">
+        <h2>Set Image Site</h2>
+        <br>
+        <img src="C:\Users\JO.WEB.DEV\Desktop\employee automation\a user.jpg" alt="" id="set-img">
+        <button  onclick="document.getElementById('getset').click()"> Set Image</button>
+        <input type="file"  id="getset" style="display: none;">
+        <br>
+        <button onclick="hiddenone()">Check set</button>
+    </div>
+    <div class="employee-highlight0" id="employee-highlight1">
+        <h2>Don't have an Image?</h2>
+        <br>
+        <button onclick="setImage_none()">Skip Set</button>
+        <div class="linked">
+            <br>
+            <a href="https://linkedin.com">LinkedIn</a> | Manage | Store
+        </div>
+    </div>
+</div>
+
+    <div id="blocker">
+        <div class="header" class="bg">
+            <div class="all">
+                <div class="logo"><i class="fas fa-gears"></i>AUTO <i class="fas fa-xmark close"></i></div>
+                <div class="paragraphy">
+                    <p id="para">Privacy preference center</p>
+                    <p>users to manage their privacy settings and control how their personal data is collected, used, and shared. This center typically provides a user-friendly interface where users can review and adjust their consent for various data processing activities, such as tracking cookies, targeted advertising, and data analytics.</p>
+                    <div class="cards">
+                        <div class="card">
+                            <div class="top">
+                                <div class="ones"><i class="fas fa-plus plus" onclick="openSlide()"></i> List  operation</div>
+                                <div class="two">
+                                    always active
+                                </div>
+                            </div>
+                            <div class="bottom">
+                                <p>
+                                    These cookies enable the website to provide functionality 
+                                    and personalization. They may be set by us or by third party 
+                                    providers whose services we have added to our pages. If you 
+                                    do not allow these cookies then some important features such 
+                                    as in-app notifications, contests and promotions will not work.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="top">
+                                <div class="ones"><i class="fas fa-plus plus" onclick="openSlide()"></i> Delete all operation</div>
+                                <div class="two">
+                                    <div class="counter">
+                                        <div class="count"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="bottom">
+                                <p>
+                                    The deleting operation refers to the process of removing data or content from a storage medium or a system. This can involve erasing files from a computer, deleting entries from a database, or removing posts or comments from a social media platform. When you perform a delete operation, the system typically marks the space occupied by the deleted content as available for future use, although the actual data may remain recoverable until it is overwritten. In some cases, deleted data can be restored using special software or system features. Proper deletion methods, such as secure deletion, ensure that the data is permanently erased and cannot be recovered .
+                                </p>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="top">
+                                <div class="ones"><i class="fas fa-plus plus" onclick="openSlide()"></i> Necessary skip set</div>
+                                <div class="two">
+                                    always active
+                                </div>
+                            </div>
+                            <div class="bottom">
+                                <p>
+                                    These cookies are essential for enabling user movement around 
+                                    our website and providing access to features such as your profile 
+                                    and purchases, log in credentials, and other areas of the website. 
+                                    These cookies are necessary to enable the basic features of this site 
+                                    to function, such as providing secure log-in, allowing images to load, 
+                                    or allowing you to select your cookie preferences. This category of 
+                                    cookies cannot be disabled
+                                </p>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="top">
+                                <div class="ones"><i class="fas fa-plus plus" onclick="openSlide()"></i> Performance site</div>
+                                <div class="two">
+                                    <div class="counter">
+                                        <div class="count"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="bottom">
+                                <p>
+                                    Performance cookies help us to understand how visitors interact 
+                                    with our website by collecting and reporting information anonymously. 
+                                    Any information collected by means of this type of cookies is used to 
+                                    measure activity on any website, application or platform, for the 
+                                    purposes of introducing improvements in function of the analysis of 
+                                    the data regarding the service use made by users.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="button">
+                <div class="btn">
+                    <input type="button" class="reject close" value="Reject all">
+                    <input type="button" value="confirm my choices" class="close">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="custom-alert" class="modal">
+        <div class="modal-content">
+          <span class="close-btn">&times;</span>
+          <h4>MORE ABOUT</h4>
+          <br>
+          <hr>
+          <br>
+          <p>
+            A system designed to store large volumes of data for a specified company is commonly referred to as an Enterprise Data Management (EDM) system. This system is capable of handling and organizing vast amounts of structured and unstructured data generated by various departments within a company. The core components of an EDM system include data warehouses, databases, and big data platforms, which collectively ensure the efficient storage, retrieval, and analysis of data.
+          </p>
+           
+      </div>
+      <!---POST YOUR IMAGE-->
+
+<script src="index.js"> 
+</script>
+</body>
+</html>
